@@ -1,1 +1,1 @@
-http://139.199.202.173/motd.html
+http://118.89.50.34/motd.html
