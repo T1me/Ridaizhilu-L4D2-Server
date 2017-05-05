@@ -1,0 +1,1 @@
+./srcds_run -game left4dead2 +hostport 25252 +map c2m1_highway -secure +exec server.cfg
