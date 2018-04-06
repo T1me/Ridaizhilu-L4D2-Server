@@ -1,0 +1,26 @@
+﻿"Phrases"
+{
+	"ThrownMolotov"
+	{
+	
+		"#format"	"{1:s}"
+		"en"		"{1} 扔出了一个燃烧弹!"
+
+	}
+	
+	"BurnedGascan"
+	{
+	
+		"#format"	"{1:s}"
+		"en"		"{1} 引爆了油桶!"
+
+	}
+	
+	"BurnedGascanAsSpitter"
+	{
+	
+		"#format"	"{1:s}"
+		"en"		"{1} 引爆了油桶!"
+
+	}
+}
