@@ -65,4 +65,14 @@
 		"R_ACM_Next_Maps" "c1m1_hotel"
 		"R_ACM_Next_Name" "c1-死亡中心"
 	}
+	"uz_escape"
+	{
+		"R_ACM_Next_Maps" "c2m1_highway"
+		"R_ACM_Next_Name" "c2-黑色狂欢节"
+	}
+	"dw_final"
+	{
+		"R_ACM_Next_Maps" "c2m1_highway"
+		"R_ACM_Next_Name" "c2-黑色狂欢节"
+	}
 }
