@@ -392,7 +392,7 @@ void SendPrivateChat(int client, int target, const char[] message)
 	}
 
 	PrintToChat(target, "\x04(Private to %N) %N: \x01%s", target, client, message);
-	LogAction(client, -1, "\"%L\" triggered sm_psay to \"%L\" (text %s)", client, target, message);
+	LogAction(client, target, "\"%L\" triggered sm_psay to \"%L\" (text %s)", client, target, message);
 }
 
 void SendPanelToAll(int from, char[] message)
@@ -407,8 +407,7 @@ void SendPanelToAll(int from, char[] message)
 	mSayPanel.DrawItem("", ITEMDRAW_SPACER);
 	mSayPanel.DrawText(message);
 	mSayPanel.DrawItem("", ITEMDRAW_SPACER);
-
-	mSayPanel.CurrentKey = 10;
+	mSayPanel.CurrentKey = GetMaxPageItems(mSayPanel.Style);
 	mSayPanel.DrawItem("Exit", ITEMDRAW_CONTROL);
 
 	for(int i = 1; i <= MaxClients; i++)

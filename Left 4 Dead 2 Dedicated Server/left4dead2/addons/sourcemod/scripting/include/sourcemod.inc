@@ -325,6 +325,10 @@ native int GetTime(int bigStamp[2]={0,0});
  *
  * See this URL for valid parameters: 
  * http://cplusplus.com/reference/clibrary/ctime/strftime.html
+ * 
+ * Note that available parameters depends on support from your operating system.
+ * In particular, ones highlighted in yellow on that page are not currently
+ * available on Windows and should be avoided for portable plugins.
  *
  * @param buffer		Destination string buffer.
  * @param maxlength		Maximum length of output string buffer.
@@ -644,6 +648,37 @@ native int LoadFromAddress(Address addr, NumberType size);
  * @param size          How many bytes should be written.
  */
 native void StoreToAddress(Address addr, int data, NumberType size); 
+
+methodmap FrameIterator < Handle {
+	// Creates a stack frame iterator to build your own stack traces.
+	// @return New handle to a FrameIterator.
+	public native FrameIterator();
+		
+	// Advances the iterator to the next stack frame.
+	// @return True if another frame was fetched and data can be successfully read.
+	// @error No next element exception.
+	public native bool Next();
+	
+	// Resets the iterator back to it's starting position.
+	public native void Reset();
+	
+	// Returns the line number of the current function call.
+	property bool LineNumber {
+		public native get();
+	}
+	
+	// Gets the name of the current function in the call stack.
+	//
+	// @param buffer Buffer to copy to.
+	// @param maxlen Max size of the buffer.
+	public native void GetFunctionName(char[] buffer, int maxlen);
+	
+	// Gets the file path to the current call in the call stack.
+	//
+	// @param buffer Buffer to copy to.
+	// @param maxlen Max size of the buffer.
+	public native void GetFilePath(char[] buffer, int maxlen);
+}
 
 #include <helpers>
 #include <entity>
